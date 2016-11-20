@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_politics"
+            android:icon="@mipmap/politics"
+            android:title="Politics" />
+        <item
+            android:id="@+id/nav_Economics"
+            android:icon="@mipmap/economy"
+            android:title="Economics" />
+        <item
+            android:id="@+id/nav_Military"
+            android:icon="@mipmap/military"
+            android:title="Military" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@mipmap/medicine"
+            android:title="Health" />
+    </group>
+
+    <item android:title="Turn">
+        <menu>
+            <item
+                android:id="@+id/nav_roll"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Roll" />
+            <item
+                android:id="@+id/nav_skip"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Skip" />
+        </menu>
+    </item>
+
+</menu>

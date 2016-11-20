@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.frywj.navigationdrawerdemo.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:text="Turn:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTurnCounter"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:src="@drawable/map3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_constraintBottom_creator="1"
+            android:adjustViewBounds="true"
+            android:cropToPadding="false"
+            app:layout_constraintVertical_bias="0.51" />
+
+        <Button
+            android:id="@+id/buttonRed"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+            android:layout_height="78dp"
+            android:layout_width="64dp"
+            app:layout_constraintRight_toRightOf="@+id/imageView3"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.69"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3" />
+
+        <Button
+            android:id="@+id/buttonYellow"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:layout_height="76dp"
+            android:layout_width="90dp"
+            app:layout_constraintRight_toRightOf="@+id/imageView3"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.42000002"
+            app:layout_constraintHorizontal_bias="0.09" />
+
+        <Button
+            android:id="@+id/buttonGray"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:layout_height="98dp"
+            app:layout_constraintRight_toRightOf="@+id/imageView3"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+            android:layout_width="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.13" />
+
+        <Button
+            android:id="@+id/buttonMaroon"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:layout_height="84dp"
+            android:layout_width="75dp"
+            app:layout_constraintRight_toRightOf="@+id/imageView3"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintVertical_bias="0.24000001" />
+
+        <Button
+            android:id="@+id/buttonLightBlue"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:layout_width="77dp"
+            app:layout_constraintRight_toRightOf="@+id/imageView3"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintVertical_bias="0.63"
+            android:layout_height="48dp" />
+
+        <Button
+            android:id="@+id/buttonDarkBlue"
+            style="@android:style/Widget.Holo.Button.Borderless"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="63dp"
+            app:layout_constraintRight_toRightOf="@+id/imageView3"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintVertical_bias="0.9" />
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>
