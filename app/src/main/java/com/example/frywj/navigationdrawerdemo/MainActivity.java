@@ -18,6 +18,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.frywj.navigationdrawerdemo.Region;
+import com .example.frywj.navigationdrawerdemo.Nation;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity
     private Button buttonMaroon;
     private Button buttonLightBlue;
     private Button buttonDarkBlue;
+    private Button buttonAttack;
+    private Button buttonMove;
+    private Button buttonTrade;
     private TextView textViewTurnCounter;
 
     private int turnNumber = 1;
@@ -42,12 +48,15 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //The FAB will act as our finish turn button
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Advancing to next turn...", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
+                turnNumber ++;
+                textViewTurnCounter.setText("Turn: " + turnNumber);
             }
         });
 
@@ -69,6 +78,10 @@ public class MainActivity extends AppCompatActivity
         textViewTurnCounter = (TextView) findViewById(R.id.textViewTurnCounter);
 
 
+        buttonAttack = (Button) findViewById(R.id.buttonAttack);
+        buttonMove = (Button) findViewById(R.id.buttonMove);
+        buttonTrade = (Button) findViewById(R.id.buttonTrade);
+
         buttonYellow.setOnClickListener(this);
         buttonGray.setOnClickListener(this);
         buttonRed.setOnClickListener(this);
@@ -76,7 +89,9 @@ public class MainActivity extends AppCompatActivity
         buttonLightBlue.setOnClickListener(this);
         buttonDarkBlue.setOnClickListener(this);
 
-        textViewTurnCounter.setText("Turn: " + turnNumber);
+        Nation nationOne = new Nation();
+        Nation nationTwo = new Nation();
+        Region redRegion = new Region(10, 5);
 
     }
 
@@ -107,6 +122,9 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_logout) {
+            Intent intentLogin = new Intent(this, LoginActivity.class);
+            this.startActivity(intentLogin);
         }
 
         return super.onOptionsItemSelected(item);
@@ -119,10 +137,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_politics) {
-            // Handle the camera action
+            // Handle the politics action
         } else if (id == R.id.nav_Economics) {
-
+            buttonTrade.setOnClickListener(this);
+            buttonTrade.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_Military) {
+            buttonAttack.setOnClickListener(this);
+            buttonMove.setOnClickListener(this);
+            buttonAttack.setVisibility(View.VISIBLE);
+            buttonMove.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_health) {
 
@@ -140,12 +163,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View v) {
 
-        Intent intentLogin = new Intent(this, LoginActivity.class);
-
         switch (v.getId()) {
             case R.id.buttonYellow:
-                //Toast.makeText(this, "Yellow", Toast.LENGTH_SHORT).show();
-                this.startActivity(intentLogin);
+                Toast.makeText(this, "Yellow", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.buttonGray:
                 Toast.makeText(this, "Gray", Toast.LENGTH_SHORT).show();
@@ -161,6 +181,22 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.buttonDarkBlue:
                 Toast.makeText(this, "Dark Blue", Toast.LENGTH_SHORT).show();
+                break;
+
+
+            case R.id.buttonAttack:
+                Toast.makeText(this, "Attack!!", Toast.LENGTH_SHORT).show();
+                buttonAttack.setVisibility(View.GONE);
+                buttonMove.setVisibility(View.GONE);
+                break;
+            case R.id.buttonMove:
+                Toast.makeText(this, "Move Out!!", Toast.LENGTH_SHORT).show();
+                buttonAttack.setVisibility(View.GONE);
+                buttonMove.setVisibility(View.GONE);
+                break;
+            case R.id.buttonTrade:
+                Toast.makeText(this, "Buy and Sell!!", Toast.LENGTH_SHORT).show();
+                buttonTrade.setVisibility(View.GONE);
                 break;
         }
     }

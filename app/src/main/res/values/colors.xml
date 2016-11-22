@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="blueRegion">#1B4F72</color>
+    <color name="redRegion">#78281F</color>
+    <color name="greenRegion">#186A3B</color>
+    <color name="yellowRegion">#F1C40F</color>
+    <color name="greyRegion">#626567</color>
+    <color name="orangeRegion">#AF601A</color>
+    <color name="darkBlueRegion">#34495E</color>
 </resources>
