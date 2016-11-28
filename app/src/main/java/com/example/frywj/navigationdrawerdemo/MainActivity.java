@@ -2,6 +2,8 @@ package com.example.frywj.navigationdrawerdemo;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,16 +28,23 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
 
     private ImageView imageViewMap;
-    private Button buttonYellow;
-    private Button buttonGray;
-    private Button buttonRed;
-    private Button buttonMaroon;
-    private Button buttonLightBlue;
-    private Button buttonDarkBlue;
+    public Button buttonRegion1;
+    public Button buttonRegion2;
+    public Button buttonRegion3;
+    public Button buttonRegion4;
+    public Button buttonRegion5;
+    public Button buttonRegion6;
     private Button buttonAttack;
     private Button buttonMove;
     private Button buttonTrade;
     private TextView textViewTurnCounter;
+
+    private ImageView imageViewRegion1;
+    private ImageView imageViewRegion2;
+    private ImageView imageViewRegion3;
+    private ImageView imageViewRegion4;
+    private ImageView imageViewRegion5;
+    private ImageView imageViewRegion6;
 
     private int turnNumber = 1;
 
@@ -69,25 +78,38 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        buttonYellow = (Button) findViewById(R.id.buttonYellow);
-        buttonGray = (Button) findViewById(R.id.buttonGray);
-        buttonRed = (Button) findViewById(R.id.buttonRed);
-        buttonMaroon = (Button) findViewById(R.id.buttonMaroon);
-        buttonLightBlue = (Button) findViewById(R.id.buttonLightBlue);
-        buttonDarkBlue = (Button) findViewById(R.id.buttonDarkBlue);
+        buttonRegion1 = (Button) findViewById(R.id.buttonRegion1);
+        buttonRegion2 = (Button) findViewById(R.id.buttonRegion2);
+        buttonRegion3 = (Button) findViewById(R.id.buttonRegion3);
+        buttonRegion4 = (Button) findViewById(R.id.buttonRegion4);
+        buttonRegion5 = (Button) findViewById(R.id.buttonRegion5);
+        buttonRegion6 = (Button) findViewById(R.id.buttonRegion6);
+
         textViewTurnCounter = (TextView) findViewById(R.id.textViewTurnCounter);
+
+        imageViewRegion1 = (ImageView) findViewById(R.id.imageViewRegion1);
+        imageViewRegion2 = (ImageView) findViewById(R.id.imageViewRegion2);
+        imageViewRegion3 = (ImageView) findViewById(R.id.imageViewRegion3);
+        imageViewRegion4 = (ImageView) findViewById(R.id.imageViewRegion4);
+        imageViewRegion5 = (ImageView) findViewById(R.id.imageViewRegion5);
+        imageViewRegion6 = (ImageView) findViewById(R.id.imageViewRegion6);
 
 
         buttonAttack = (Button) findViewById(R.id.buttonAttack);
         buttonMove = (Button) findViewById(R.id.buttonMove);
         buttonTrade = (Button) findViewById(R.id.buttonTrade);
 
-        buttonYellow.setOnClickListener(this);
-        buttonGray.setOnClickListener(this);
-        buttonRed.setOnClickListener(this);
-        buttonMaroon.setOnClickListener(this);
-        buttonLightBlue.setOnClickListener(this);
-        buttonDarkBlue.setOnClickListener(this);
+        buttonRegion1.setOnClickListener(this);
+        buttonRegion2.setOnClickListener(this);
+        buttonRegion3.setOnClickListener(this);
+        buttonRegion4.setOnClickListener(this);
+        buttonRegion5.setOnClickListener(this);
+        buttonRegion6.setOnClickListener(this);
+
+
+        //imageViewRegion1.setColorFilter(Color.BLUE);
+        //imageViewRegion2.setColorFilter(Color.BLUE);
+
 
         Nation nationOne = new Nation();
         Nation nationTwo = new Nation();
@@ -164,23 +186,29 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.buttonYellow:
+            case R.id.buttonRegion1:
+                imageViewRegion1.setColorFilter(Color.WHITE);
                 Toast.makeText(this, "Yellow", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.buttonGray:
+            case R.id.buttonRegion2:
+                imageViewRegion2.setColorFilter(Color.WHITE);
                 Toast.makeText(this, "Gray", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.buttonRed:
-                Toast.makeText(this, "Red", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.buttonMaroon:
+            case R.id.buttonRegion3:
+                imageViewRegion3.setColorFilter(Color.WHITE);
                 Toast.makeText(this, "Maroon", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.buttonLightBlue:
+            case R.id.buttonRegion4:
+                imageViewRegion4.setColorFilter(Color.WHITE);
                 Toast.makeText(this, "Light Blue", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.buttonDarkBlue:
+            case R.id.buttonRegion5:
+                imageViewRegion5.setColorFilter(Color.WHITE);
                 Toast.makeText(this, "Dark Blue", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.buttonRegion6:
+                imageViewRegion6.setColorFilter(Color.WHITE);
+                Toast.makeText(this, "Red", Toast.LENGTH_SHORT).show();
                 break;
 
 
